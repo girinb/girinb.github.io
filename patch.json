@@ -1,0 +1,10 @@
+{
+  "version": 2.0,
+  "patch": [
+    "characater_battle_sound_pack",
+    "character_image_pack",
+    "enamy_image_01_pack",
+    "game_design_pack",
+    "game_ui_pack"
+  ]
+}
