@@ -1,9 +1,9 @@
-const cacheName = "girin-30MIN-1.0";
+const cacheName = "girin-30MIN-2.0";
 const contentToCache = [
-    "Build/game.loader.js",
-    "Build/game.framework.js.unityweb",
-    "Build/game.data.unityweb",
-    "Build/game.wasm.unityweb",
+    "Build/web.loader.js",
+    "Build/web.framework.js.unityweb",
+    "Build/web.data.unityweb",
+    "Build/web.wasm.unityweb",
     "TemplateData/style.css"
 
 ];
