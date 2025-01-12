@@ -276,7 +276,7 @@
 
 번역 언어（１）：
 <select id="trans" onchange="updateOptionValues(only_url=false);">
-    <option value="none">なし</option>
+    <option value="none">없음음</option>
     <option value="ja">일본어</option>
     <option value="en" selected>영어</option>
     <option value="ko">한국어</option>
@@ -336,7 +336,7 @@
 
 번역언어（２）：
 <select id="trans2" onchange="updateOptionValues(only_url=false);">
-    <option value="none" selected>なし</option>
+    <option value="none" selected>없음음</option>
     <option value="ja">일본어</option>
     <option value="en">영어</option>
     <option value="ko">한국어</option>
@@ -395,7 +395,7 @@
 
 翻訳言語（３）：
 <select id="trans3" onchange="updateOptionValues(only_url=false);">
-    <option value="none" selected>なし</option>
+    <option value="none" selected>없음</option>
     <option value="ja">일본어</option>
     <option value="en">영어</option>
     <option value="ko">한국어</option>
@@ -465,12 +465,6 @@
 <HR>
 
 
-<!-- # 棒読みちゃん連携 ######################### -->
-- 棒読みちゃん連携を使う：<input type="checkbox" id="bouyomi" onchange="updateOptionValues()"> ← 使う場合チェック入れる．詳細 → <a target="_blank" href="https://twitter.com/sayonari/status/1386937837682003968">twitter</a><BR>
-<!-- # センシティブワード対応する！ ######################### -->
-- センシティブワード対応（***に置き換え）を<font color="red">やめる</font>：<input type="checkbox" id="anti_sexual" onchange="updateOptionValues()"> <BR>
-<HR>
-
 <!-- # URL view & copy button ############### -->
 <!-- URL :  -->
 <!-- <textarea name="url" id="url" rows="7" cols="90"></textarea><BR> -->
@@ -480,16 +474,16 @@
 <!-- <HR> -->
 
 <!-- # .bat download ボタン ############################## -->
-.bat ファイル生成：<BR>
-これ使ったら，<font color="red">全画面ゲームしてても止まらない！</font>詳しくはこちら→（<a target="_blank" href="https://www.youtube.com/watch?v=8-UXx_tVeYk">解説動画</a>）<BR>
-.batファイルと，設定ファイルをダウンロードしてください．<BR>
+.bat 파일 생성：<BR>
+전체화면을 해도 멈추지 않음，<font color="red">새창으로 띄우고 백그라운드 동작 시킴！</font>설명 링크→（<a target="_blank" href="https://www.youtube.com/watch?v=8-UXx_tVeYk">설명 동영상</a>）<BR>
+.bat파일과，설정을 다운로드하세요．(전체화면 게임을 할때 사이트 멈추 방지를 하기 위한 기능)<BR>
 
 <table border="1" style="width: auto;"><tr><td>
 <table style="width: auto;">
     <tr>
-        <td width="180">Windowsの人：</td>
-        <td><button onclick="generateBatFile('win')">Windows用 起動 .batファイル生成</button></td>
-        <td><button onclick="saveSettings()">設定ファイルをPCに保存</button></td>
+        <td width="180">Windows 사용자용：</td>
+        <td><button onclick="generateBatFile('win')">Windows용 bat 파일 생성</button></td>
+        <td><button onclick="saveSettings()">환경 설정을 pc에 저장</button></td>
     </tr>
 </tr>
 </table>
@@ -500,8 +494,8 @@
 <table style="width: auto;">
     <tr>
         <td width="180">Macの人：</td>
-        <td><button onclick="generateBatFile('mac')">Mac用 起動 .commandファイル生成</button></td>
-        <td><button onclick="saveSettings()">設定ファイルをPCに保存</button></td>
+        <td><button onclick="generateBatFile('mac')">Mac맥 사용자용 cmd파일 생성</button></td>
+        <td><button onclick="saveSettings()">환경 설정을 pc에 저장</button></td>
     </tr>
 </table>
 </td></tr></table>
@@ -586,7 +580,7 @@
         var trans_text_font_selector = document.getElementById('trans_text_font_selector').value;
         var trans_text2_font_selector = document.getElementById('trans_text2_font_selector').value;
         var trans_text3_font_selector = document.getElementById('trans_text3_font_selector').value;
-        console.log("フォントテキストエリア: " + speech_text_font_selector);
+        console.log("글꼴 텍스트 영역: " + speech_text_font_selector);
         if (speech_text_font_selector === "direct") {
             speech_text_font.disabled = false;
         } else {
@@ -743,7 +737,7 @@
       url = decodeURIComponent(url);
   
       if (url === '') {
-        alert('URLがありません．エラーです．');
+        alert('URL없습니다．에러입니다．');
         return;
       }
       
@@ -811,7 +805,7 @@
         var iframe = document.getElementById('asr_frame');
         var transCount = iframe.contentWindow.document.getElementById('translationCount').innerHTML;
         if(transCount == ''){
-            transCount = '[ココに回数出るよ！]';
+            transCount = '[남은 횟수 나온다！]';
         }
         return transCount;
     }
