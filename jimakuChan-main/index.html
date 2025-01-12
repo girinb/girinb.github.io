@@ -29,7 +29,7 @@
     </script>
     <!-- END: Google tag (gtag.js) -->
 
-    <title>자막쨩쨩: 음성인식 자막쨩</title>
+    <title>jimakuChan: 音声認識字幕ちゃん [CONFIG]</title>
 
     <style type="text/css">
         button, input, select, textarea {
@@ -108,34 +108,34 @@
 <!-- <iframe src="" name="sample" width="100%" height="30%" id="asr_frame" onclick="toggleIframeHeight()"></iframe> -->
 <iframe src="" name="sample" width="100%" height="30%" id="asr_frame"></iframe>
 
-　위의 화면을 클릭하면 설정 화면이 닫히고 다시 누르면 다시 열립니다.<BR>
+　上の画面をクリックすると設定画面が閉じ，もう一度押すと再度開きます．<BR>
 <HR>
 
 <!-- # 設定セーブ＆ロードボタン ################## -->
-　<button onclick="saveSettings()">설정을 PC에 저장</button>　
-<button onclick="loadSettings()">설정을 브라우저로 불러오기</button>　：설정이 완료되면 설정 파일을 저장합시다.　<BR>
+　<button onclick="saveSettings()">設定ファイルをPCに保存</button>　
+<button onclick="loadSettings()">設定ファイルをブラウザに読込</button>　：設定が完成したら，設定ファイルを保存しておきましょう　<BR>
 <HR>
 
 <!-- # API key text box ##################### -->
-번역용 Google API-KEY: <input type="text" name="gas_key" id="gas_key" size="60" oninput="updateOptionValues();" /> キーの作成方法 → <a target="_blank" href="http://www.sayonari.com/trans_asr/index_asr.html">[LINK]</a><BR>
-남은 번역 횟수：<div id="displayTransCount" style="display: inline-block; _display: inline;"></div><font color="gray">（무료 횟수：5,000회，유료：20,000회）←구글에 돈을 낸다.</font><BR>
+翻訳用 Google API-KEY: <input type="text" name="gas_key" id="gas_key" size="60" oninput="updateOptionValues();" /> キーの作成方法 → <a target="_blank" href="http://www.sayonari.com/trans_asr/index_asr.html">[LINK]</a><BR>
+翻訳回数：<div id="displayTransCount" style="display: inline-block; _display: inline;"></div><font color="gray">（上限 無料：5,000回，有料：20,000回）←僕じゃなくてGoogle にお金払う</font><BR>
 <HR>
 
 <!-- # 背景の色 ############################## -->
-　　　　문자색 아웃라인색<BR>
-인식 언어　：<input id="color1" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,1); updateOptionValues(only_url=true)" />
+　　　　文字色 フチ色<BR>
+認識　：<input id="color1" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,1); updateOptionValues(only_url=true)" />
 <input id="st_color1" type="color" value="#000000" oninput="changeTextColor('bg',this.value,1); updateOptionValues(only_url=true)" />
 
-　　배경색：<input id="bgcolor" type="color" value="#00ff00" oninput="document.getElementById('asr_frame').contentWindow.document.bgColor=this.value; changeTextColor('imb',this.value,1); updateOptionValues(only_url=true)" />
+　　背景色：<input id="bgcolor" type="color" value="#00ff00" oninput="document.getElementById('asr_frame').contentWindow.document.bgColor=this.value; changeTextColor('imb',this.value,1); updateOptionValues(only_url=true)" />
 
 <BR>
-번역 언어１：<input id="color2" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,2); updateOptionValues(only_url=true)" />
+翻訳１：<input id="color2" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,2); updateOptionValues(only_url=true)" />
 <input id="st_color2" type="color" value="#000000" oninput="changeTextColor('bg',this.value,2); updateOptionValues(only_url=true)" /><BR>
 
-번역 언어２：<input id="color3" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,3); updateOptionValues(only_url=true)" />
+翻訳２：<input id="color3" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,3); updateOptionValues(only_url=true)" />
 <input id="st_color3" type="color" value="#000000" oninput="changeTextColor('bg',this.value,3); updateOptionValues(only_url=true)" /><BR>
 
-번역 언어３：<input id="color4" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,4); updateOptionValues(only_url=true)" />
+翻訳３：<input id="color4" type="color" value="#ffffff" oninput="changeTextColor('fg',this.value,4); updateOptionValues(only_url=true)" />
 <input id="st_color4" type="color" value="#000000" oninput="changeTextColor('bg',this.value,4); updateOptionValues(only_url=true)" /><BR>
 
 <HR>
@@ -145,8 +145,8 @@
          -->
 
 <!-- # テキストサイズ ######################### -->
-　　　　　　　사이즈　　　　　　　비중　　　　　　　 테두리　<BR>
-인식 언어　：
+　　　　　　　サイズ　　　　　　　ウェイト　　　　　　　 縁取り　<BR>
+認識　：
 <input id="size1" type="range" value="25" min="0" max="40" step="0.1" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('speech_text').style.fontSize = this.value + 'pt'; document.getElementById('text_size_view1').innerHTML=this.value; updateOptionValues(only_url=true)" />
 <span id="text_size_view1">25</span>px 
 
@@ -157,7 +157,7 @@
 <span id="text_st_size_view1">6</span>pt
 <BR>
 
-번역 언어１：
+翻訳１：
 <input id="size2" type="range" value="25" min="0" max="40" step="0.1" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text').style.fontSize = this.value + 'pt'; document.getElementById('text_size_view2').innerHTML=this.value; updateOptionValues(only_url=true)" />
 <span id="text_size_view2">25</span>px 
 
@@ -168,7 +168,7 @@
 <span id="text_st_size_view2">6</span>pt
 <BR>
 
-번역 언어２：
+翻訳２：
 <input id="size3" type="range" value="25" min="0" max="40" step="0.1" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text2').style.fontSize = this.value + 'pt'; document.getElementById('text_size_view3').innerHTML=this.value; updateOptionValues(only_url=true)" />
 <span id="text_size_view3">25</span>px 
 
@@ -179,7 +179,7 @@
 <span id="text_st_size_view3">6</span>pt
 <BR>
 
-번역 언어３：
+翻訳３：
 <input id="size4" type="range" value="25" min="0" max="40" step="0.1" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text3').style.fontSize = this.value + 'pt'; document.getElementById('text_size_view4').innerHTML=this.value; updateOptionValues(only_url=true)" />
 <span id="text_size_view4">25</span>px 
 
@@ -192,55 +192,55 @@
 
 <HR>
 <!-- # テキストの揃え ######################### -->
-텍스트 위치：　
-좌우 정렬：
+テキストの位置：　
+左右：
 <select id="textAlign" onchange="updateOptionValues()">
-    <option value="left">왼쪽</option>
-    <option value="center" selected>중앙</option>
-    <option value="right">오른쪽</option>
+    <option value="left">左寄せ</option>
+    <option value="center" selected>中央寄せ</option>
+    <option value="right">右寄せ</option>
 </select>
 
-　상하 정렬：
+　上下：
 <select id="v_align" onchange="updateOptionValues()">
-    <option value="top" selected>상단</option>
-    <option value="bottom">하단</option>
+    <option value="top" selected>上</option>
+    <option value="bottom">下</option>
 </select><BR>
 
 <!-- # テキストの改行 ######################### -->
-텍스트 줄 바꿈：
+テキストの改行：
 <select id="whiteSpace" onchange="updateOptionValues()">
-    <option value="nowrap">줄 바꿈 없음</option>
-    <option value="" selected>화면 끝에서 줄 바꿈</option>
+    <option value="nowrap">改行しない</option>
+    <option value="" selected>画面端で改行</option>
 </select><BR>
 <HR>
 
 <!-- # テキスト表示項目 ####################### -->
-입력 받을 언어　：
+音声認識言語　：
 <select id="recog" onchange="updateOptionValues(only_url=false);">
-    <option value="ja" >일본어</option>
-    <option value="en">영어</option>
-    <option value="ko" selected>한국어</option>
-    <option value="zh-CN">중국어</option>
-    <option value="zh-TW">대만어</option>
-    <option value="fr">프랑스어</option>
-    <option value="it">이탈리아어</option>
-    <option value="de">독일어</option>
-    <option value="tr">터키어</option>
-    <option value="sv">스웨덴어</option>
-    <option value="pl">폴란드어</option>
-    <option value="uk">우크라이나어</option>
-    <option value="ru">러시아어</option>
-    <option value="es">스페인어</option>
-    <option value="pt">포르투칼어</option>
-    <option value="nl">네덜란드어</option>
-    <option value="id">인도네시아어</option>
-    <option value="vi">베트남어</option>
-    <option value="th">태국어</option>
-    <option value="ar">아랍어</option>
-    <option value="so">소말리아어</option>
+    <option value="ja" selected>日本語</option>
+    <option value="en">英語</option>
+    <option value="ko" selected>韓国語</option>
+    <option value="zh-CN">中国語</option>
+    <option value="zh-TW">台湾語</option>
+    <option value="fr">フランス語</option>
+    <option value="it">イタリア語</option>
+    <option value="de">ドイツ語</option>
+    <option value="tr">トルコ語</option>
+    <option value="sv">スウェーデン語</option>
+    <option value="pl">ポーランド語</option>
+    <option value="uk">ウクライナ語</option>
+    <option value="ru">ロシア語</option>
+    <option value="es">スペイン語</option>
+    <option value="pt">ポルトガル語</option>
+    <option value="nl">オランダ語</option>
+    <option value="id">インドネシア語</option>
+    <option value="vi">ベトナム語</option>
+    <option value="th">タイ語</option>
+    <option value="ar">アラビア語</option>
+    <option value="so">ソマリ語</option>
 </select>　　
 
-폰트　：
+フォント　：
 <select name="speech_text_font_selector" id="speech_text_font_selector" onchange="document.getElementById('asr_frame').contentWindow.document.getElementById('speech_text').style.fontFamily = this.value; selectFont();">
     <option value="direct">[直接指定]</option>
     <option value="M PLUS\ 1p">M PLUS 1p</option>
@@ -271,36 +271,36 @@
     <option value="Sawarabi Gothic">さわらびゴシック</option>
     <option value="Nico Moji">ニコモジ</option>
 </select>　
-폰트（직접 지정）：<input type="text" name="speech_text_font" id="speech_text_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('speech_text').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
+フォント（直接指定）：<input type="text" name="speech_text_font" id="speech_text_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('speech_text').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
 
 
-번역 언어（１）：
+翻訳言語（１）：
 <select id="trans" onchange="updateOptionValues(only_url=false);">
-    <option value="none" selected>없음</option>
-    <option value="ja">일본어</option>
-    <option value="en" >영어</option>
-    <option value="ko">한국어</option>
-    <option value="zh-CN">중국어</option>
-    <option value="zh-TW">대만어</option>
-    <option value="fr">프랑스어</option>
-    <option value="it">이탈리아어</option>
-    <option value="de">독일어</option>
-    <option value="tr">터키어</option>
-    <option value="sv">스웨덴어</option>
-    <option value="pl">폴란드어</option>
-    <option value="uk">우크라이나어</option>
-    <option value="ru">러시아어</option>
-    <option value="es">스페인어</option>
-    <option value="pt">포르투칼어</option>
-    <option value="nl">네덜란드어</option>
-    <option value="id">인도네이사어</option>
-    <option value="vi">베트남어</option>
-    <option value="th">태국어</option>
-    <option value="ar">아랍어</option>
-    <option value="so">소말리아어</option>
+    <option value="none">なし</option>
+    <option value="ja">日本語</option>
+    <option value="en" selected>英語</option>
+    <option value="ko">韓国語</option>
+    <option value="zh-CN">中国語</option>
+    <option value="zh-TW">台湾語</option>
+    <option value="fr">フランス語</option>
+    <option value="it">イタリア語</option>
+    <option value="de">ドイツ語</option>
+    <option value="tr">トルコ語</option>
+    <option value="sv">スウェーデン語</option>
+    <option value="pl">ポーランド語</option>
+    <option value="uk">ウクライナ語</option>
+    <option value="ru">ロシア語</option>
+    <option value="es">スペイン語</option>
+    <option value="pt">ポルトガル語</option>
+    <option value="nl">オランダ語</option>
+    <option value="id">インドネシア語</option>
+    <option value="vi">ベトナム語</option>
+    <option value="th">タイ語</option>
+    <option value="ar">アラビア語</option>
+    <option value="so">ソマリ語</option>
 </select>　　
 
-폰트　：
+フォント　：
 <select name="trans_text_font_selector" id="trans_text_font_selector" onchange="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text').style.fontFamily = this.value; selectFont();">
     <option value="direct">[直接指定]</option>
     <option value="M PLUS\ 1p">M PLUS 1p</option>
@@ -331,36 +331,36 @@
     <option value="Sawarabi Gothic">さわらびゴシック</option>
     <option value="Nico Moji">ニコモジ</option>
 </select>　
-폰트（직접지정）：<input type="text" name="trans_text_font" id="trans_text_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
+フォント（直接指定）：<input type="text" name="trans_text_font" id="trans_text_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
 
 
-번역언어（２）：
+翻訳言語（２）：
 <select id="trans2" onchange="updateOptionValues(only_url=false);">
-    <option value="none" selected>없음</option>
-    <option value="ja">일본어</option>
-    <option value="en">영어</option>
-    <option value="ko">한국어</option>
-    <option value="zh-CN">중국어</option>
-    <option value="zh-TW">대만어</option>
-    <option value="fr">프랑스어</option>
-    <option value="it">이탈리아어</option>
-    <option value="de">독일어</option>
-    <option value="tr">터키어</option>
-    <option value="sv">스웨덴어</option>
-    <option value="pl">폴란드어</option>
-    <option value="uk">우크라이나어</option>
-    <option value="ru">러시아어</option>
-    <option value="es">스페인어</option>
-    <option value="pt">포르투칼어</option>
-    <option value="nl">네덜란드어</option>
-    <option value="id">인도네이사어</option>
-    <option value="vi">베트남어</option>
-    <option value="th">태국어</option>
-    <option value="ar">아랍어</option>
-    <option value="so">소말리아어</option>
+    <option value="none" selected>なし</option>
+    <option value="ja">日本語</option>
+    <option value="en">英語</option>
+    <option value="ko">韓国語</option>
+    <option value="zh-CN">中国語</option>
+    <option value="zh-TW">台湾語</option>
+    <option value="fr">フランス語</option>
+    <option value="it">イタリア語</option>
+    <option value="de">ドイツ語</option>
+    <option value="tr">トルコ語</option>
+    <option value="sv">スウェーデン語</option>
+    <option value="pl">ポーランド語</option>
+    <option value="uk">ウクライナ語</option>
+    <option value="ru">ロシア語</option>
+    <option value="es">スペイン語</option>
+    <option value="pt">ポルトガル語</option>
+    <option value="nl">オランダ語</option>
+    <option value="id">インドネシア語</option>
+    <option value="vi">ベトナム語</option>
+    <option value="th">タイ語</option>
+    <option value="ar">アラビア語</option>
+    <option value="so">ソマリ語</option>
 </select>　　
 
-폰트　：
+フォント　：
 <select name="trans_text2_font_selector" id="trans_text2_font_selector" onchange="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text2').style.fontFamily = this.value; selectFont();">
     <option value="direct">[直接指定]</option>
     <option value="M PLUS\ 1p">M PLUS 1p</option>
@@ -391,35 +391,35 @@
     <option value="Sawarabi Gothic">さわらびゴシック</option>
     <option value="Nico Moji">ニコモジ</option>
 </select>　
-폰트（직접 지정）：<input type="text" name="trans_text2_font" id="trans_text2_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text2').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
+フォント（直接指定）：<input type="text" name="trans_text2_font" id="trans_text2_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text2').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
 
 翻訳言語（３）：
 <select id="trans3" onchange="updateOptionValues(only_url=false);">
-    <option value="none" selected>없음</option>
-    <option value="ja">일본어</option>
-    <option value="en">영어</option>
-    <option value="ko">한국어</option>
-    <option value="zh-CN">중국어</option>
-    <option value="zh-TW">대만어</option>
-    <option value="fr">프랑스어</option>
-    <option value="it">이탈리아어</option>
-    <option value="de">독일어</option>
-    <option value="tr">터키어</option>
-    <option value="sv">스웨덴어</option>
-    <option value="pl">폴란드어</option>
-    <option value="uk">우크라이나어</option>
-    <option value="ru">러시아어</option>
-    <option value="es">스페인어</option>
-    <option value="pt">포르투칼어</option>
-    <option value="nl">네덜란드어</option>
-    <option value="id">인도네이사어</option>
-    <option value="vi">베트남어</option>
-    <option value="th">태국어</option>
-    <option value="ar">아랍어</option>
-    <option value="so">소말리아어</option>
+    <option value="none" selected>なし</option>
+    <option value="ja">日本語</option>
+    <option value="en">英語</option>
+    <option value="ko">韓国語</option>
+    <option value="zh-CN">中国語</option>
+    <option value="zh-TW">台湾語</option>
+    <option value="fr">フランス語</option>
+    <option value="it">イタリア語</option>
+    <option value="de">ドイツ語</option>
+    <option value="tr">トルコ語</option>
+    <option value="sv">スウェーデン語</option>
+    <option value="pl">ポーランド語</option>
+    <option value="uk">ウクライナ語</option>
+    <option value="ru">ロシア語</option>
+    <option value="es">スペイン語</option>
+    <option value="pt">ポルトガル語</option>
+    <option value="nl">オランダ語</option>
+    <option value="id">インドネシア語</option>
+    <option value="vi">ベトナム語</option>
+    <option value="th">タイ語</option>
+    <option value="ar">アラビア語</option>
+    <option value="so">ソマリ語</option>
 </select>　　
 
-폰트　：
+フォント　：
 <select name="trans_text3_font_selector" id="trans_text3_font_selector" onchange="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text3').style.fontFamily = this.value; selectFont();">
     <option value="direct">[直接指定]</option>
     <option value="M PLUS\ 1p">M PLUS 1p</option>
@@ -450,20 +450,26 @@
     <option value="Sawarabi Gothic">さわらびゴシック</option>
     <option value="Nico Moji">ニコモジ</option>
 </select>　
-폰트（직접 지정）：<input type="text" name="trans_text3_font" id="trans_text3_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text3').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
+フォント（直接指定）：<input type="text" name="trans_text3_font" id="trans_text3_font" size="30" oninput="document.getElementById('asr_frame').contentWindow.document.getElementById('trans_text3').style.fontFamily = this.value; updateOptionValues();" disabled /><br>
 
 <HR>
 
 <!-- # テキスト表示を●秒後に消す ######################### -->
-몇 밀리 초 후에 문장을 지우겠습니까?　　　：　
-<input type="text" name="timer" id="timer" size="10" oninput="updateOptionValues();" />밀리초（반각 문자로 입력．1000밀리초 = 1초）<BR>
+何ミリ秒後に文を消す？　　　：　
+<input type="text" name="timer" id="timer" size="10" oninput="updateOptionValues();" />ミリ秒（半角数字で入れてね．1000ミリ秒 = 1秒）<BR>
 
 <!-- # 文の終わり ######################### -->
-몇 밀리초 침묵하면 문장을 마치겠습니까?：　
-<input type="text" name="short_pause" value="750" id="short_pause" size="10" oninput="updateOptionValues();" />밀리초（반각 문자로 입력．1000밀리초 = 1초）<BR>
-（500：바로 자르기｜750：보통｜1000：연결　조정하세요．아무것도 넣지 않으면 지금까지와 같은 동작이 된다.）<BR>
+何ミリ秒黙ったら文を区切る？：　
+<input type="text" name="short_pause" value="750" id="short_pause" size="10" oninput="updateOptionValues();" />ミリ秒（半角数字で入れてね．1000ミリ秒 = 1秒）<BR>
+（500：すぐ切る｜750：普通｜1000：つなぐ　調整して．何も入れないと，これまでと同じ動作になる．）<BR>
 <HR>
 
+
+<!-- # 棒読みちゃん連携 ######################### -->
+- 棒読みちゃん連携を使う：<input type="checkbox" id="bouyomi" onchange="updateOptionValues()"> ← 使う場合チェック入れる．詳細 → <a target="_blank" href="https://twitter.com/sayonari/status/1386937837682003968">twitter</a><BR>
+<!-- # センシティブワード対応する！ ######################### -->
+- センシティブワード対応（***に置き換え）を<font color="red">やめる</font>：<input type="checkbox" id="anti_sexual" onchange="updateOptionValues()"> <BR>
+<HR>
 
 <!-- # URL view & copy button ############### -->
 <!-- URL :  -->
@@ -474,16 +480,16 @@
 <!-- <HR> -->
 
 <!-- # .bat download ボタン ############################## -->
-.bat 파일 생성：<BR>
-전체화면을 해도 멈추지 않음，<font color="red">새창으로 띄우고 백그라운드 동작 시킴！</font>설명 링크→（<a target="_blank" href="https://www.youtube.com/watch?v=8-UXx_tVeYk">설명 동영상</a>）<BR>
-.bat파일과，설정을 다운로드하세요．(전체화면 게임을 할때 사이트 멈추 방지를 하기 위한 기능)<BR>
+.bat ファイル生成：<BR>
+これ使ったら，<font color="red">全画面ゲームしてても止まらない！</font>詳しくはこちら→（<a target="_blank" href="https://www.youtube.com/watch?v=8-UXx_tVeYk">解説動画</a>）<BR>
+.batファイルと，設定ファイルをダウンロードしてください．<BR>
 
 <table border="1" style="width: auto;"><tr><td>
 <table style="width: auto;">
     <tr>
-        <td width="180">Windows 사용자용：</td>
-        <td><button onclick="generateBatFile('win')">Windows용 bat 파일 생성</button></td>
-        <td><button onclick="saveSettings()">환경 설정을 pc에 저장</button></td>
+        <td width="180">Windowsの人：</td>
+        <td><button onclick="generateBatFile('win')">Windows用 起動 .batファイル生成</button></td>
+        <td><button onclick="saveSettings()">設定ファイルをPCに保存</button></td>
     </tr>
 </tr>
 </table>
@@ -494,8 +500,8 @@
 <table style="width: auto;">
     <tr>
         <td width="180">Macの人：</td>
-        <td><button onclick="generateBatFile('mac')">Mac맥 사용자용 cmd파일 생성</button></td>
-        <td><button onclick="saveSettings()">환경 설정을 pc에 저장</button></td>
+        <td><button onclick="generateBatFile('mac')">Mac用 起動 .commandファイル生成</button></td>
+        <td><button onclick="saveSettings()">設定ファイルをPCに保存</button></td>
     </tr>
 </table>
 </td></tr></table>
@@ -580,7 +586,7 @@
         var trans_text_font_selector = document.getElementById('trans_text_font_selector').value;
         var trans_text2_font_selector = document.getElementById('trans_text2_font_selector').value;
         var trans_text3_font_selector = document.getElementById('trans_text3_font_selector').value;
-        console.log("글꼴 텍스트 영역: " + speech_text_font_selector);
+        console.log("フォントテキストエリア: " + speech_text_font_selector);
         if (speech_text_font_selector === "direct") {
             speech_text_font.disabled = false;
         } else {
@@ -737,7 +743,7 @@
       url = decodeURIComponent(url);
   
       if (url === '') {
-        alert('URL없습니다．에러입니다．');
+        alert('URLがありません．エラーです．');
         return;
       }
       
@@ -805,7 +811,7 @@
         var iframe = document.getElementById('asr_frame');
         var transCount = iframe.contentWindow.document.getElementById('translationCount').innerHTML;
         if(transCount == ''){
-            transCount = '[남은 횟수 나온다！]';
+            transCount = '[ココに回数出るよ！]';
         }
         return transCount;
     }
