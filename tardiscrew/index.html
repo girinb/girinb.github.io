@@ -2,75 +2,86 @@
 <html lang="ko">
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KM4QKZFS');</script>
-<!-- End Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KM4QKZFS');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <title>닥터후 뉴시즌 블루레이</title>
- <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-    }
-    .navbar {
-        display: flex;
-        background-color: #333;
-        overflow: hidden;
-    }
-    .navbar a {
-        flex: 1;
-        padding: 14px 20px;
-        text-align: center;
-        text-decoration: none;
-        color: white;
-    }
-    .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-    table {
-        width: 100%;
-        min-width: 1000px; /* 테이블 최소 너비 확대 */
-        border-collapse: collapse;
-    }
-    td {
-        padding: 30px; /* 셀 여백 증가 */
-        border: 1px solid #444444;
-        min-width: 200px; /* 셀 너비 확대 */
-        text-align: center;
-    }
-    td a img {
-        max-width: 100%;
-        height: auto;
-    }
-</style>
+    <style>
+        /* Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* 전체 화면 높이 */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column; /* 수직 정렬 */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around; /* 버튼 간격 균등 분배 */
+            align-items: center;
+            background-color: #333;
+            height: 10%; /* 전체 화면의 상위 10% 차지 */
+            color: white;
+        }
+
+        .navbar button {
+            flex: 1;
+            padding: 10px;
+            margin: 5px;
+            background-color: #444;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .navbar button:hover {
+            background-color: #555;
+        }
+
+        iframe#content-frame {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM4QKZFS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    <!-- 네이게이션 바 -->
-<div class="navbar">
-    <!-- 기존 버튼 -->
-    <button onclick="changeIframe('index9.html')">닥터후 뉴시즌 블루레이</button>
-    <button onclick="changeIframe('index7.html')">닥터후 뉴뉴 시즌 립</button>
-    <button onclick="changeIframe('index2.html')">뉴시즌 더빙</button>
-    <button onclick="changeIframe('index3.html')">사라제인 어드벤처</button>
-    <button onclick="changeIframe('index8.html')">닥터후 올닥</button>
-    <button onclick="changeIframe('index4.html')">닥터후 올닥 스페셜</button>
-    <button onclick="changeIframe('index6.html')">토치우드</button>
-    <button onclick="changeIframe('index5.html')">추천 걸작선</button>
-    <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgirinb%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits counter"/></a>
-</div>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM4QKZFS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- 네비게이션 바 -->
+    <div class="navbar">
+        <button onclick="changeIframe('index9.html')">닥터후 뉴시즌 블루레이</button>
+        <button onclick="changeIframe('index7.html')">닥터후 뉴뉴 시즌 립</button>
+        <button onclick="changeIframe('index2.html')">뉴시즌 더빙</button>
+        <button onclick="changeIframe('index3.html')">사라제인 어드벤처</button>
+        <button onclick="changeIframe('index8.html')">닥터후 올닥</button>
+        <button onclick="changeIframe('index4.html')">닥터후 올닥 스페셜</button>
+        <button onclick="changeIframe('index6.html')">토치우드</button>
+        <button onclick="changeIframe('index5.html')">추천 걸작선</button>
+        <a href="https://hits.seeyoufarm.com">
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgirinb%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false" alt="Hits counter"/>
+        </a>
+    </div>
 
     <!-- 콘텐츠를 보여줄 iframe -->
-<iframe id="content-frame" src="index9.html" style="width: 100%; height: 95vh; margin: 20px auto; border: none; display: block;"></iframe>
+    <iframe id="content-frame" src="index9.html"></iframe>
 
     <script>
         // iframe의 src를 변경하는 함수
@@ -79,5 +90,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
     </script>
 </body>
-
 </html>
